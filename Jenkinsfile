@@ -3,25 +3,25 @@ pipeline {
 
         stages {
  
-            stage ('Test pruebas unitarias') {
+            stage ('test_pruebas_unitarias') {
                 steps {
-                    sh "mvn clean compile test"
+                    sh "mvn clean compile test_pruebas_unitarias"
                 }
             }
 
-            stage ('Compilamos aplicación') {
+            stage ('Compilamos_aplicación') {
                 steps {
                     sh "mvn -f pom.xml clean install -Dmaven.test.skip=true"   
                 }
             }
   
-            stage ('Hacemos pruebas funcionales') {
+            stage ('Hacemos_pruebas_funcionales') {
                 steps {
                  echo "creando imagen"
                 }
 
             }
-            stage ('Mandamos a producción') {
+            stage ('Mandamos_a_producción') {
                 steps {
                  echo "creando imagen"
                 }
